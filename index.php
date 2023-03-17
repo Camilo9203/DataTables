@@ -24,51 +24,49 @@
     <script src="//cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+    <!-- Script -->
+    <script src="js/app.js"></script>
 </head>
 <body>
-
-<main>
-    <div class="container">
-        <div class="alert alert-primary" role="alert">
-            Datatables con rango de fechas
-        </div>
-
-        <!-- Date Filter -->
-        <form id="formFecha">
-            <table>
+    <main>
+        <div class="container">
+            <div class="alert alert-primary" role="alert">
+                Datatables con rango de fechas
+            </div>
+            <!-- Date Filter -->
+            <form id="formFecha">
+                <table>
+                    <tr>
+                        <td>
+                            <input type='text' readonly id='buscar_inicio' class="datepicker" placeholder='Fecha Inicio'class="form-control form-control-sm">
+                        </td>
+                        <td>
+                            <input type='text' readonly id='buscar_fin' class="datepicker" placeholder='Fecha fin' class="form-control form-control-sm">
+                        </td>
+                        <td>
+                            <input type='button' id="btn_search" value="Buscar" class="btn btn-primary btn-sm">
+                        </td>
+                        <td>
+                            <input type='button' id="btnLimpiar" value="Limpiar" class="btn btn-danger btn-sm">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <hr>
+            <!-- Table -->
+            <table id='table_personal' class="table table-striped" style="width:100%">
+                <thead>
                 <tr>
-                    <td>
-                        <input type='text' readonly id='buscar_inicio' class="datepicker" placeholder='Fecha Inicio'class="form-control form-control-sm">
-                    </td>
-                    <td>
-                        <input type='text' readonly id='buscar_fin' class="datepicker" placeholder='Fecha fin' class="form-control form-control-sm">
-                    </td>
-                    <td>
-                        <input type='button' id="btn_search" value="Buscar" class="btn btn-primary btn-sm">
-                    </td>
-                    <td>
-                        <input type='button' id="btnLimpiar" value="Limpiar" class="btn btn-danger btn-sm">
-                    </td>
+                    <th>Nombre personal</th>
+                    <th>Email</th>
+                    <th>Salario</th>
+                    <th>Ciudad</th>
+                    <th>Fecha de ingreso</th>
                 </tr>
+                </thead>
             </table>
-        </form>
-        <hr>
-        <!-- Table -->
-        <table id='Tabla_personal' class="table table-striped" style="width:100%">
-            <thead>
-            <tr>
-                <th>Nombre personal</th>
-                <th>Email</th>
-                <th>Salario</th>
-                <th>Ciudad</th>
-                <th>Fecha de ingreso</th>
-            </tr>
-            </thead>
-
-        </table>
-    </div>
-
-</main>
+        </div>
+    </main>
 <script>
     $("#btnLimpiar").click(function(event) {
         $("#formFecha")[0].reset();
